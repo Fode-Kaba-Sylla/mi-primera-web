@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Primera Web</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Cabecera -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-indigo-600">Fodé Dev</h1>
+      <nav class="space-x-6 text-sm font-medium">
+        <a href="#servicios" class="hover:text-indigo-600 transition">Servicios</a>
+        <a href="#contacto" class="hover:text-indigo-600 transition">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-4xl mx-auto px-6 py-20 text-center">
+    <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+      Webs y automatizaciones con IA
+    </h2>
+    <p class="text-lg text-gray-500 mb-8">
+      Ayudo a negocios a crecer con páginas web modernas y flujos automáticos.
+    </p>
+    <a href="#contacto"
+       class="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition">
+      Hablemos
+    </a>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="bg-white py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-2xl font-bold text-center mb-10">Servicios</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="border rounded-xl p-6 text-center hover:shadow-md transition">
+          <div class="text-3xl mb-3">🌐</div>
+          <h4 class="font-semibold text-lg mb-2">Páginas web</h4>
+          <p class="text-gray-500 text-sm">Diseño rápido, moderno y adaptado a tu negocio.</p>
+        </div>
+        <div class="border rounded-xl p-6 text-center hover:shadow-md transition">
+          <div class="text-3xl mb-3">⚡</div>
+          <h4 class="font-semibold text-lg mb-2">Automatizaciones</h4>
+          <p class="text-gray-500 text-sm">Flujos con n8n e IA para ahorrarte horas de trabajo.</p>
+        </div>
+        <div class="border rounded-xl p-6 text-center hover:shadow-md transition">
+          <div class="text-3xl mb-3">🤖</div>
+          <h4 class="font-semibold text-lg mb-2">Agentes IA</h4>
+          <p class="text-gray-500 text-sm">Asistentes inteligentes integrados en tu negocio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="max-w-4xl mx-auto px-6 py-16 text-center">
+    <h3 class="text-2xl font-bold mb-4">¿Hablamos?</h3>
+    <p class="text-gray-500 mb-6">Cuéntame tu proyecto y te respondo en menos de 24h.</p>
+    <a href="mailto:fkaba1382@gmail.com"
+       class="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition">
+      Enviar email
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-400 py-6 border-t">
+    © 2026 Fodé Dev · Hecho con Claude Code
+  </footer>
+
+</body>
+</html>
