@@ -57,20 +57,46 @@
     </div>
   </section>
 
-  <!-- Contacto -->
-  <section id="contacto" class="max-w-4xl mx-auto px-6 py-16 text-center">
-    <h3 class="text-2xl font-bold mb-4">¿Hablamos?</h3>
-    <p class="text-gray-500 mb-6">Cuéntame tu proyecto y te respondo en menos de 24h.</p>
-    <a href="mailto:fkaba1382@gmail.com"
-       class="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition">
-      Enviar email
-    </a>
-  </section>
+  
+ <!-- Contacto -->
+<section id="contacto" class="max-w-4xl mx-auto px-6 py-16 text-center">
+  <h3 class="text-2xl font-bold mb-4">¿Hablamos?</h3>
+  <p class="text-gray-500 mb-8">Cuéntame tu proyecto y te respondo en menos de 24h.</p>
+  
+  <form id="formulario" class="max-w-lg mx-auto text-left space-y-4">
+    <input type="text" id="nombre" placeholder="Tu nombre"
+      class="w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+    <input type="email" id="email" placeholder="Tu email"
+      class="w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+    <textarea id="mensaje" placeholder="Tu mensaje" rows="4"
+      class="w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400" required></textarea>
+    <button type="submit"
+      class="w-full bg-indigo-600 text-white py-3 rounded-full font-semibold hover:bg-indigo-700 transition">
+      Enviar mensaje →
+    </button>
+    <p id="estado" class="text-center text-sm text-gray-500"></p>
+  </form>
 
-  <!-- Footer -->
-  <footer class="text-center text-sm text-gray-400 py-6 border-t">
-    © 2026 Fodé Dev · Hecho con Claude Code
-  </footer>
-
-</body>
-</html>
+  <script>
+    document.getElementById('formulario').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const estado = document.getElementById('estado');
+      estado.textContent = 'Enviando...';
+      try {
+        await fetch('https://fodekabasylla.app.n8n.cloud/webhook/5f3330da-71a9-461e-b4e5-cd53491c01d1', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nombre: document.getElementById('nombre').value,
+            email: document.getElementById('email').value,
+            mensaje: document.getElementById('mensaje').value
+          })
+        });
+        estado.textContent = '✅ Mensaje enviado. Te respondo pronto.';
+        document.getElementById('formulario').reset();
+      } catch(err) {
+        estado.textContent = '❌ Error al enviar. Inténtalo de nuevo.';
+      }
+    });
+  </script>
+</section>
